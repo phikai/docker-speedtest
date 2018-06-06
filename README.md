@@ -7,6 +7,39 @@ This is a special purpose container designed to execute [Speedtest-CLI](https://
 
 Image is based on Alpine Linux and available via [Docker Hub](https://hub.docker.com/r/phikai/speedtest/) as `phikai/speedtest`.
 
+## Usage
+Container is designed to be used as a companion to a working InfluxDB Container. An example can be found [here](https://github.com/phikai/docker-internet-speedtest-dashboard).
+
+```---
+version: '2'
+services:
+  influxdb:
+    image: influxdb 
+    container_name: influxdb
+    restart: unless-stopped
+    network_mode: 'bridge'
+    ports:
+      - '8086:8086'
+    environment:
+      - INFLUXDB_DB=speedtest
+    volumes:
+      - './influxdb:/var/lib/influxdb'
+  
+  [...]
+  
+  speedtest:
+    image: phikai/speedtest
+    container_name: speedtest
+    restart: unless-stopped
+    network_mode: 'bridge'
+    environment:
+      - TEST_INTERVAL=5
+    links:
+      - influxdb:db
+    depends_on:
+      - influxdb
+```
+
 ---
 
 If this project has helped you in anyway, and you'd like to say thanks...
