@@ -1,5 +1,8 @@
 # Docker Speedtest
 
+*PSA*: Project has moved to [gitlab](https://gitlab.com/phikai/docker-speedtest). This repo will remain on Github as a mirror.
+---
+
 This is a port of the Speedtest Docker Image from [Pedro César](https://github.com/pedrocesar-ti/internet-speedtest-docker/tree/docker_speedtest). A huge thanks to his legwork on the script and ideas.
 
 ## Purpose
