@@ -38,7 +38,7 @@ services:
     environment:
       - TEST_INTERVAL=5
     links:
-      - influxdb:db
+      - influxdb
     depends_on:
       - influxdb
 ```
