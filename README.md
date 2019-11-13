@@ -8,7 +8,7 @@ This is a port of the Speedtest Docker Image from [Pedro César](https://github.
 ## Purpose
 This is a special purpose container designed to execute [Speedtest-CLI](https://github.com/sivel/speedtest-cli) and post the results to a companion InfluxDB Instance.
 
-Image is based on Alpine Linux and available via [Docker Hub](https://hub.docker.com/r/phikai/speedtest/) as `phikai/speedtest`. This image is automatically rebuilt to a new `latest` when a new release to [Speedtest-CLI](https://github.com/sivel/speedtest-cli) is tagged. (based on Nico Maas' [idea](https://www.nico-maas.de/?p=1443)) 
+Image is based on Alpine Linux and available via [Docker Hub](https://hub.docker.com/r/phikai/speedtest/) as `phikai/speedtest`. This image is automatically rebuilt to a new `latest` when a new release to [Speedtest-CLI](https://github.com/sivel/speedtest-cli) is tagged; originally based on Nico Maas' [idea](https://www.nico-maas.de/?p=1443), but now triggering a GitLab CI Job to build and push the image.
 
 ## Usage
 Container is designed to be used as a companion to a working InfluxDB Container. An example can be found [here](https://github.com/phikai/docker-internet-speedtest-dashboard).
